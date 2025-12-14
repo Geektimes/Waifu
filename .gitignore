@@ -1,0 +1,72 @@
+# .gitignore
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Виртуальные окружения ---
+venv/
+env/
+.env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Переменные окружения и секреты (ВАЖНО!) ---
+.env
+.env.*
+!.env.example
+# Если у тебя есть файл с локальными настройками докера
+docker-compose.override.yml
+
+# --- Telethon / Userbot ---
+# Файлы сессий содержат ключи доступа к аккаунту — никогда не заливай их!
+*.session
+*.session-journal
+
+# Игнорируем содержимое папки session, но оставляем скрипт создания
+session/*
+!session/make_session.py
+!session/__init__.py
+!session/README.md
+
+# --- IDE и редакторы кода ---
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Тестирование и проверки типов ---
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+
+# --- Docker ---
+# Если ты монтируешь данные базы локально (хотя у тебя named volume pgdata, но на всякий случай)
+postgres_data/
+pgdata/

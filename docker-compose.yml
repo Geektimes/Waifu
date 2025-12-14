@@ -1,0 +1,29 @@
+services:
+  waifu:
+    build: .
+    container_name: waifu
+    env_file:
+      - .env
+    volumes:
+      # ВАЖНО: Монтируем текущую папку (корень) в /app,
+      # чтобы структура внутри была /app/waifu/main.py
+      # и чтобы pyproject.toml тоже был виден.
+      - .:/app
+      - ./session:/app/session
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres:16
+    container_name: waifu_db
+    environment:
+      POSTGRES_DB: userbot
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  pgdata:
