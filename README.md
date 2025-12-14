@@ -1,13 +1,13 @@
--=Waifu=- --- Telegram Userbot  \n
-![alt text](https://img.shields.io/badge/Python-3.13-blue?logo=python)  \n
+-=Waifu=- --- Telegram Userbot
+![alt text](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 
-![alt text](https://img.shields.io/badge/Telethon-Async-orange)  \n
+![alt text](https://img.shields.io/badge/Telethon-Async-orange)
 
-![alt text](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)  \n
+![alt text](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)
 
-![alt text](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)  \n
+![alt text](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)
 
-🇷🇺 Russian  \n
+🇷🇺 Russian
 Waifu Userbot — это асинхронный юзербот для Telegram, предназначенный для создания дампов (резервных копий) истории чатов. Он сохраняет сообщения, информацию о пользователях, чатах и скачивает аватарки в локальную базу данных PostgreSQL.  \n
 ✨ Возможности  \n
 Сохранение истории: Скачивает сообщения из групп, супергрупп, каналов и личных переписок.
