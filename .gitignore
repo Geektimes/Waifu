@@ -73,3 +73,7 @@ coverage.xml
 # Если ты монтируешь данные базы локально (хотя у тебя named volume pgdata, но на всякий случай)
 postgres_data/
 pgdata/
+
+# --- DB ===
+*.sql
+*.csv

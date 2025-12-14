@@ -13,6 +13,9 @@ API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 SESSION_NAME = "session/user"
 
+# Создаем папку для аватарок, если её нет
+os.makedirs("session/avatars", exist_ok=True)
+
 client = TelegramClient(
     SESSION_NAME,
     API_ID,
@@ -24,13 +27,15 @@ client = TelegramClient(
 )
 
 async def init_db():
-    """Создает таблицы в БД, если их нет"""
+    """Создает таблицы в БД"""
     async with engine.begin() as conn:
-        # await conn.run_sync(Base.metadata.drop_all) # Раскомментировать, если надо очистить БД
+        # ВНИМАНИЕ: Если меняется структура таблиц, старые таблицы нужно удалить.
+        # Для продакшена используйте Alembic. Для теста можно раскомментировать:
+        # await conn.run_sync(Base.metadata.drop_all) 
+        
         await conn.run_sync(Base.metadata.create_all)
 
 async def main():
-    # Сначала инициализируем БД
     await init_db()
     print("База данных инициализирована.")
     
