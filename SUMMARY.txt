@@ -88,6 +88,7 @@ CMD ["python", "-m", "waifu.main"]
 
 ### ./.gitignore ###
 # .gitignore
+SUMMARY.txt
 
 # --- Python ---
 __pycache__/
@@ -185,7 +186,6 @@ build-backend = "poetry.core.masonry.api"
 # --- End of ./pyproject.toml ---
 
 ### ./waifu/models.py ###
-#./waifu/models.py
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import Column, Integer, String
 
@@ -202,7 +202,6 @@ class MessageLog(Base):
 # --- End of ./waifu/models.py ---
 
 ### ./waifu/main.py ###
-#./waifu/main.py
 import os
 from telethon import TelegramClient
 from telethon.sessions import StringSession
@@ -236,7 +235,6 @@ with client:
 # --- End of ./waifu/main.py ---
 
 ### ./waifu/db.py ###
-#./waifu/db.py
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 
@@ -252,7 +250,6 @@ SessionLocal = sessionmaker(
 # --- End of ./waifu/db.py ---
 
 ### ./waifu/handlers.py ###
-#./waifu/handlers.py
 from telethon import events
 
 def register_handlers(client):
