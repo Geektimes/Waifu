@@ -1,6 +1,4 @@
 # .gitignore
-SUMMARY.txt
-
 # --- Логи чатов ---
 chat_dumps/
 *.txt

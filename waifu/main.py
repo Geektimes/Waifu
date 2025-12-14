@@ -1,9 +1,11 @@
 import os
+import asyncio
 from telethon import TelegramClient
-from telethon.sessions import StringSession
 from dotenv import load_dotenv
 
 from .handlers import register_handlers
+from .db import engine
+from .models import Base
 
 load_dotenv()
 
@@ -21,7 +23,17 @@ client = TelegramClient(
     lang_code="ru"
 )
 
+async def init_db():
+    """Создает таблицы в БД, если их нет"""
+    async with engine.begin() as conn:
+        # await conn.run_sync(Base.metadata.drop_all) # Раскомментировать, если надо очистить БД
+        await conn.run_sync(Base.metadata.create_all)
+
 async def main():
+    # Сначала инициализируем БД
+    await init_db()
+    print("База данных инициализирована.")
+    
     register_handlers(client)
     print("Userbot запущен")
     await client.run_until_disconnected()
