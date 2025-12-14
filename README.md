@@ -1,11 +1,8 @@
 -=Waifu=- --- Telegram Userbot
 
 ![alt text](https://img.shields.io/badge/Python-3.13-blue?logo=python)
-
 ![alt text](https://img.shields.io/badge/Telethon-Async-orange)
-
 ![alt text](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)
-
 ![alt text](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)
 
 🇷🇺 Russian
